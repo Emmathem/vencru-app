@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import Header from './Header';
 import { scrollToTop } from '../../utils/Helpers';
 import PropTypes from 'prop-types';
+import MobileHeader from './MobileHeader';
 
 const MainLayout = (props) => {
     const { title, pageTitle, subPageTitle, children } = props;
@@ -23,6 +24,7 @@ const MainLayout = (props) => {
             <Helmet>
                 <title>{title} | Untitled App</title>
             </Helmet>
+            <MobileHeader />
             <Sidebar toggleSide={toggleSide} toggle={toggle} token={token} />
             <main
                 className={`relative main-body transition min-h-screen overflow-y-auto animate__animated animate__fadeInUp`}
