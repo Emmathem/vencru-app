@@ -15,7 +15,7 @@ export const addToLocalStorage = (key, value) => {
     }
 };
 
-export const getFromLocalStorage = key => {
+export const getFromLocalStorage = (key) => {
     try {
         return localStorage.getItem(key);
     } catch (e) {
@@ -23,7 +23,7 @@ export const getFromLocalStorage = key => {
     }
 };
 
-export const removeFromLocalStorage = key => {
+export const removeFromLocalStorage = (key) => {
     localStorage.removeItem(key);
 };
 
@@ -41,7 +41,7 @@ export const addToSessionStorage = (key, value) => {
     }
 };
 
-export const getFromSessionStorage = key => {
+export const getFromSessionStorage = (key) => {
     try {
         return sessionStorage.getItem(key);
     } catch (e) {
@@ -49,7 +49,7 @@ export const getFromSessionStorage = key => {
     }
 };
 
-export const removeFromSessionStorage = key => {
+export const removeFromSessionStorage = (key) => {
     return sessionStorage.removeItem(key);
 };
 

@@ -1,11 +1,7 @@
 import moment from 'moment';
-import { toast } from 'react-toastify';
-import { getFromSessionStorage } from './browserStorage';
 
 // export const CurrencySign = '$';
-
 export const CurrencySign = '₦';
-
 
 export const LOGGER = (key, value, isProd = process.env.NODE_ENV === 'production') => {
     if (isProd) {
@@ -15,46 +11,14 @@ export const LOGGER = (key, value, isProd = process.env.NODE_ENV === 'production
     console.log(key, value);
 };
 
-// Encrypting Security of User Profile
-export const EncryptUserDetails = value => {
-    const stringifyValue = JSON.stringify(value);
-    return CryptoJS.AES.encrypt(stringifyValue, passphrase).toString();
-};
-
-// Decrypting and retrieving User Profile Object
-export const GET_USER_TOKEN = () => {
-    const getFromStorage = getFromSessionStorage('token');
-    if (!getFromStorage) {
-        return;
-    }
-    const profileByteDecrypt = CryptoJS.AES.decrypt(getFromStorage, passphrase);
-    const toOriginalString = profileByteDecrypt.toString(CryptoJS.enc.Utf8);
-    return toOriginalString ? JSON.parse(toOriginalString) : null;
-};
-
-export const CopierHelper = (obj, id, text) => {
-    if (obj !== null) {
-        const doc = document.getElementById(id);
-        doc.focus();
-        doc.select();
-        document.execCommand('copy');
-
-        navigator.clipboard.writeText(doc.value);
-
-        toast.info(`${text} copied`);
-    } else {
-        toast.error('Failed to copy to clipboard, try again later');
-    }
-};
-
-export const formatAmount = num => {
+export const formatAmount = (num) => {
     if (num) {
         const initial = parseFloat(num).toFixed(2);
         return initial.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 };
 
-export const formatNumber = num => {
+export const formatNumber = (num) => {
     if (!num) {
         return;
     }
@@ -88,7 +52,7 @@ export const GetNumberOfDaysInDates = (startdate, enddate) => {
     return Math.abs(moment.duration(start.diff(end)).asDays());
 };
 
-export const GenerateString = length => {
+export const GenerateString = (length) => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
     const charactersLength = characters.length;
@@ -97,38 +61,6 @@ export const GenerateString = length => {
     }
     return result;
 };
-
-// export const pdfWithPrintJs = (printable, documentTitle, type = 'image') => {
-//     // const cssText = `
-//     //   background-color: #ffffff
-//     // `;
-//     try {
-//         html2canvas(document.getElementById(printable), {
-//             logging: true,
-//             allowTaint: true,
-//             letterRendering: 1,
-//             useCORS: true,
-//             backgroundColor: 'white',
-//         }).then(canvas => {
-//             const imgData = canvas.toDataURL('image/jpeg', 1.0);
-//             const config = {
-//                 type,
-//                 documentTitle,
-//                 printable: imgData,
-//                 base64: true,
-//                 // targetStyle: [cssText],
-//                 // maxWidth: 800,
-//             };
-//             printJs(config);
-//         });
-//     } catch (e) {
-//         LOGGER('pdfWithPrintJs', e);
-//         toast.error('Failed!', 'PDF generation failed.\n Page might be too large.\n', 'error');
-//     }
-// };
-// export const exportAsFile = (data, fileName, exportType) => {
-//     exportFromJSON({ data, fileName, exportType });
-// };
 
 export const formatDateObjectHandler = (dateObj, format = 'YYYY-MM-DD') => {
     if (!dateObj) {
@@ -148,11 +80,11 @@ export const truncateText = (string = '', length = '30', ending = '...') => {
     return length > string.length ? string : string.substring(0, length - ending.length) + ending;
 };
 
-export const capitalize = val => {
+export const capitalize = (val) => {
     return val.charAt(0).toUpperCase() + val.slice(1);
 };
 
-export const findAllTotal = list => {
+export const findAllTotal = (list) => {
     if (!Array && list === undefined) {
         return 0;
     }
@@ -162,7 +94,7 @@ export const findAllTotal = list => {
     return '0.00';
 };
 
-export const isEmpty = obj => {
+export const isEmpty = (obj) => {
     for (const key in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, key)) {
             return false;
@@ -173,27 +105,4 @@ export const isEmpty = obj => {
 
 export const scrollToTop = () => {
     window.scrollTo(0, 0);
-};
-
-export const customizeUploadPath = (path, file) => {
-    const ext = file.type.split('/')[1];
-    return path + '.' + ext;
-};
-
-export const getTitle = id => {
-    let title = '';
-    switch (id) {
-        case 1:
-            title = 'Dr.';
-            break;
-        case 2:
-            title = 'Pharm.';
-            break;
-        case 3:
-            title = '';
-            break;
-        default:
-            title = '';
-    }
-    return title;
 };
