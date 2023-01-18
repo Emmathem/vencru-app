@@ -21,3 +21,5 @@ export const navMenu = {
         { id: 2, name: 'Settings', route: '/dashboard/', icon: SettingIcon, hasCount: false },
     ],
 };
+
+export const menuItemsStyle = `flex justify-between gap-3 py-2 transition text-md px-3 mb-1 rounded-md items-center menuItem_text cursor-pointer hover:bg-gray-100 hover:text-[#fff]`;
