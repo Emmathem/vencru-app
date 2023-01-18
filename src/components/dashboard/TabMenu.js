@@ -1,5 +1,6 @@
 import React from 'react';
 import { settingMenu } from '../../data/utils';
+import { Divider } from 'antd';
 
 const TabMenu = ({ isActive, setActiveTab }) => {
     return (
@@ -17,6 +18,13 @@ const TabMenu = ({ isActive, setActiveTab }) => {
                         </div>
                     </React.Fragment>
                 ))}
+            </div>
+            <div className="mt-8">
+                <div>
+                    <h1 className="text-[#101828] text-[18px] font-medium leading-8">Payment Method</h1>
+                    <h3 className="text-[#667085] text-[14px]">Update your billing details and address.</h3>
+                </div>
+                <Divider />
             </div>
         </>
     );

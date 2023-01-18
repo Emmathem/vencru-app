@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout';
 import TabMenu from './TabMenu';
 
 const DashboardIndex = () => {
-    const [isActive, setIsActive] = useState(0);
+    const [isActive, setIsActive] = useState(5);
     const setActiveTab = (key) => {
         setIsActive(key);
     };
