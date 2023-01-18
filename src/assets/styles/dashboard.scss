@@ -84,16 +84,17 @@
 }
 
 .menuItem_text {
-  color: rgba(255, 255, 255, 0.6);
+  color: #344054;
   &:hover {
-    background: rgba(242, 248, 250, 0.16);
-    color: #FFFFFF;
+    background: #F9FAFB;
+    color: #344054;
     font-weight: bold;
+    border-radius: 8px;
     transition: ease all 0.5s;
   }
   &.active {
-    background: rgba(242, 248, 250, 0.16);
-    color: #FFFFFF;
+    background: #F9FAFB;
+    color: #344054;
     font-weight: bold;
   }
 }
