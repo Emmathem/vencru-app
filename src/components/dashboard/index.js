@@ -4,7 +4,9 @@ import MainLayout from '../layouts/MainLayout';
 const DashboardIndex = () => {
     return (
         <>
-            <MainLayout title="Dashboard">Dashboard</MainLayout>
+            <MainLayout title="Dashboard" pageTitle="Settings" subPageTitle="Manage your team and preference here">
+                Dashboard
+            </MainLayout>
         </>
     );
 };
