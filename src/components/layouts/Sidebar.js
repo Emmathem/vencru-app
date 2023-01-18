@@ -1,6 +1,5 @@
 import React from 'react';
-import HealthLogo from '../../assets/img/healthlogo.png';
-import ToggleIcon from '../../assets/img/toggleIcon.svg';
+import ProductLogo from '../../assets/img/project_logo.png';
 import { navMenu } from '../../data/utils';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -18,8 +17,8 @@ const Sidebar = (props) => {
 
     return (
         <div className="sidebar sidebar__width rounded-r-lg h-screen bg-[#0C4654] px-5 py-10 transition">
-            <div onClick={() => router('/dashboard/dashboard')} className="cursor-pointer">
-                <img src={HealthLogo} alt="logo" />
+            <div onClick={() => router('/dashboard')} className="cursor-pointer">
+                <img src={ProductLogo} alt="logo" />
             </div>
             <div className="mt-12 transition">
                 {token !== undefined && (
@@ -49,7 +48,7 @@ const Sidebar = (props) => {
                     className="flex bg-[#FFFFFF14] py-2 px-4 cursor-pointer rounded-md text-white"
                     onClick={toggleSide}
                 >
-                    <img src={ToggleIcon} alt="toggle" className="pl-0" />
+                    {/*<img src={ToggleIcon} alt="toggle" className="pl-0" />*/}
                     <span className="pl-4">Toggle Sidebar</span>
                 </div>
             </div>
