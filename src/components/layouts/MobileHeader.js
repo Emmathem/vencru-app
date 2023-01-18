@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ProductLogo from '../../assets/img/project_logo.png';
 import { Link } from 'react-router-dom';
 import { RiMenu2Fill } from 'react-icons/ri';
@@ -6,7 +6,21 @@ import { menuItemsStyle, navMenu } from '../../data/utils';
 
 const MobileHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const node = useRef(null);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        const dropEffectClick = (e) => {
+            if (menuRef.current !== null && !menuRef.current.contains(e.target)) {
+                setIsOpen(!isOpen);
+            }
+        };
+        if (isOpen) {
+            window.addEventListener('click', dropEffectClick);
+        }
+        return () => {
+            window.removeEventListener('click', dropEffectClick);
+        };
+    }, [isOpen]);
 
     return (
         <>
@@ -19,7 +33,7 @@ const MobileHeader = () => {
                     <RiMenu2Fill size="30px" className="text-[#667085]" />
                 </div>
             </header>
-            <div ref={node}>
+            <div ref={menuRef}>
                 <div
                     className={`flex flex-col ${
                         isOpen ? 'translate-x-0' : '-translate-x-full'

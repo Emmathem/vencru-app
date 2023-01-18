@@ -20,7 +20,7 @@ const Sidebar = (props) => {
     };
 
     return (
-        <div className="sidebar sidebar__width h-screen bg-white px-5 py-10 transition">
+        <aside className="sidebar sidebar__width h-screen bg-white px-5 py-10 transition overflow-y-auto">
             <div onClick={() => router('/dashboard')} className="cursor-pointer flex items-center">
                 <img src={ProductLogo} alt="logo" />
                 <h4 className="text-2xl font-bold pl-3">Untitled UI</h4>
@@ -107,7 +107,7 @@ const Sidebar = (props) => {
                     <FiLogOut size="30px" className="text-[#667085]" />
                 </div>
             </div>
-        </div>
+        </aside>
     );
 };
 

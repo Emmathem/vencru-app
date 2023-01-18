@@ -31,7 +31,7 @@ const MainLayout = (props) => {
             >
                 <div className="transition">
                     <Header pageTitle={pageTitle} subPageTitle={subPageTitle} />
-                    <div className="px-6 pt-8">{children}</div>
+                    <div className="px-6 lg:pt-0 pt-8">{children}</div>
                 </div>
             </main>
         </div>
