@@ -20,7 +20,7 @@ const AppRoutes = () => {
             <Router>
                 <Routes>
                     {/*NON PROTECTED ROUTES*/}
-                    <Route path="/dashboard" exact element={<DashboardIndex />} />
+                    <Route path="/" exact element={<DashboardIndex />} />
                     <Route
                         path="/dashboard-new"
                         exact
