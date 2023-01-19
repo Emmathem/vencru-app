@@ -1,7 +1,7 @@
 import moment from 'moment';
 
-// export const CurrencySign = '$';
-export const CurrencySign = '₦';
+export const CurrencySign = '$';
+// export const CurrencySign = '₦';
 
 export const LOGGER = (key, value, isProd = process.env.NODE_ENV === 'production') => {
     if (isProd) {
