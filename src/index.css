@@ -8,3 +8,7 @@
 .table-check input:checked + div svg {
     @apply block;
 }
+
+* {
+    /*outline: 1px solid red;*/
+}

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import { Table } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { planRecord } from '../../../data/utils';
 import downloadIcon from '../../../assets/img/icons/downloadIcon.svg';
 import { CurrencySign, formatAmount } from '../../../utils/Helpers';
@@ -10,10 +9,15 @@ import BaseCheckbox from '../../base/BaseCheckbox';
 const BillingRecordSection = () => {
     const [isCheckAll, setIsCheckAll] = useState(false);
     const [isCheck, setIsCheck] = useState([]);
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+        setList(planRecord);
+    }, [list]);
 
     const handleSelectAll = () => {
         setIsCheckAll(!isCheckAll);
-        setIsCheck(planRecord.map((li) => li.id));
+        setIsCheck(list.map((li) => li.id));
         if (isCheckAll) {
             setIsCheck([]);
         }
@@ -40,8 +44,8 @@ const BillingRecordSection = () => {
                     <table className="w-full table-fixed overflow-x-auto bg-white shadow-md">
                         <thead className="text-[#667085] border border-[#EAECF0] overflow-hidden font-normal text-[12px]">
                             <tr className="bg-[#F9FAFB]">
-                                <th className="py-4 pl-5 pb-[9px] w-[25px]">
-                                    <div className="flex items-center pr-4 mb-2">
+                                <th className="py-3 px-3">
+                                    <div className="flex items-center m-auto w-10 pr-4 mb-2">
                                         <BaseCheckbox
                                             name="selectAll"
                                             id="selectAll"
@@ -64,12 +68,12 @@ const BillingRecordSection = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {planRecord?.map((item, index) => (
+                            {list?.map((item, index) => (
                                 <React.Fragment key={index}>
                                     <tr className="py-2 border border-[#EAECF0] hover:bg-gray-100">
-                                        <td className="py-6 px-6">
-                                            <div className="px-2 flex justify-center w-[25px]">
-                                                <div className="p-4 pl-3 pb-[9px]">
+                                        <td className="py-6 px-3 w-4">
+                                            <div className="px-2 flex justify-center">
+                                                <div className="py-4 px-2">
                                                     <div className="flex items-center mr-4 mb-2">
                                                         <BaseCheckbox
                                                             key={item.id}
