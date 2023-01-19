@@ -129,7 +129,7 @@ export const planRecord = [
         ],
     },
     {
-        id: 36,
+        id: 6,
         planName: 'Basic Plan – Jun 2022',
         amount: '10',
         date: 'Jun 1, 2022',

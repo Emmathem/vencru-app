@@ -5,18 +5,25 @@ import downloadIcon from '../../../assets/img/icons/downloadIcon.svg';
 import { CurrencySign, formatAmount } from '../../../utils/Helpers';
 import { BsArrowDown } from 'react-icons/bs';
 import { FcCheckmark } from 'react-icons/fc';
+import BaseCheckbox from '../../base/BaseCheckbox';
 
 const BillingRecordSection = () => {
     const [isCheckAll, setIsCheckAll] = useState(false);
     const [isCheck, setIsCheck] = useState([]);
-    // const [list, setList] = useState([]);
 
     const handleSelectAll = () => {
         setIsCheckAll(!isCheckAll);
         setIsCheck(planRecord.map((li) => li.id));
-        console.log(isCheck, 'cc');
         if (isCheckAll) {
             setIsCheck([]);
+        }
+    };
+
+    const handleClick = (e) => {
+        const { id, checked } = e.target;
+        setIsCheck([...isCheck, id]);
+        if (!checked) {
+            setIsCheck(isCheck.filter((item) => item !== id));
         }
     };
     return (
@@ -33,31 +40,14 @@ const BillingRecordSection = () => {
                     <table className="w-full table-fixed overflow-x-auto bg-white shadow-md">
                         <thead className="text-[#667085] border border-[#EAECF0] overflow-hidden font-normal text-[12px]">
                             <tr className="bg-[#F9FAFB]">
-                                <th className="py-4 pl-5 w-[25px]">
+                                <th className="py-4 pl-5 pb-[9px] w-[25px]">
                                     <div className="flex items-center pr-4 mb-2">
-                                        <input
-                                            type="checkbox"
-                                            id="checkAll"
-                                            name="confirmation"
-                                            value="yes"
-                                            // className="opacity-0 absolute h-8 w-8"
-                                            onChange={handleSelectAll}
+                                        <BaseCheckbox
+                                            name="selectAll"
+                                            id="selectAll"
+                                            handleClick={handleSelectAll}
+                                            isChecked={isCheckAll}
                                         />
-                                        {/*<div className="bg-white border-2 rounded-md border-[#D0D5DD] w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">*/}
-                                        {/*    <svg*/}
-                                        {/*        className="fill-current hidden w-3 h-3 text-blue-600 pointer-events-none"*/}
-                                        {/*        version="1.1"*/}
-                                        {/*        viewBox="0 0 17 12"*/}
-                                        {/*        xmlns="http://www.w3.org/2000/svg"*/}
-                                        {/*    >*/}
-                                        {/*        <g fill="none" fillRule="evenodd">*/}
-                                        {/*            <g transform="translate(-9 -11)" fill="#1F73F1" fillRule="nonzero">*/}
-                                        {/*                <path d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z" />*/}
-                                        {/*            </g>*/}
-                                        {/*        </g>*/}
-                                        {/*    </svg>*/}
-                                        {/*</div>*/}
-                                        <label htmlFor="checkAll" className="select-none" />
                                     </div>
                                 </th>
                                 <th className="w-1/4 text-left">
@@ -70,7 +60,7 @@ const BillingRecordSection = () => {
                                 <th>Date</th>
                                 <th>Status</th>
                                 <th>Users on Plan</th>
-                                <th></th>
+                                <th />
                             </tr>
                         </thead>
                         <tbody>
@@ -79,35 +69,15 @@ const BillingRecordSection = () => {
                                     <tr className="py-2 border border-[#EAECF0] hover:bg-gray-100">
                                         <td className="py-6 px-6">
                                             <div className="px-2 flex justify-center w-[25px]">
-                                                <div className="p-4 pl-3">
+                                                <div className="p-4 pl-3 pb-[9px]">
                                                     <div className="flex items-center mr-4 mb-2">
-                                                        <input
-                                                            type="checkbox"
-                                                            id={`plan` + item.id}
-                                                            name="confirmation"
-                                                            value="yes"
-                                                            // className="opacity-0 absolute h-8 w-8"
-                                                            checked={isCheck}
+                                                        <BaseCheckbox
+                                                            key={item.id}
+                                                            name={item.planName}
+                                                            id={item.id}
+                                                            handleClick={handleClick}
+                                                            isChecked={isCheck.includes(item.id)}
                                                         />
-                                                        {/*<div className="bg-white border-2 rounded-md border-[#D0D5DD] w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">*/}
-                                                        {/*    <svg*/}
-                                                        {/*        className="fill-current hidden w-3 h-3 text-blue-600 pointer-events-none"*/}
-                                                        {/*        version="1.1"*/}
-                                                        {/*        viewBox="0 0 17 12"*/}
-                                                        {/*        xmlns="http://www.w3.org/2000/svg"*/}
-                                                        {/*    >*/}
-                                                        {/*        <g fill="none" fillRule="evenodd">*/}
-                                                        {/*            <g*/}
-                                                        {/*                transform="translate(-9 -11)"*/}
-                                                        {/*                fill="#1F73F1"*/}
-                                                        {/*                fillRule="nonzero"*/}
-                                                        {/*            >*/}
-                                                        {/*                <path d="m25.576 11.414c0.56558 0.55188 0.56558 1.4439 0 1.9961l-9.404 9.176c-0.28213 0.27529-0.65247 0.41385-1.0228 0.41385-0.37034 0-0.74068-0.13855-1.0228-0.41385l-4.7019-4.588c-0.56584-0.55188-0.56584-1.4442 0-1.9961 0.56558-0.55214 1.4798-0.55214 2.0456 0l3.679 3.5899 8.3812-8.1779c0.56558-0.55214 1.4798-0.55214 2.0456 0z" />*/}
-                                                        {/*            </g>*/}
-                                                        {/*        </g>*/}
-                                                        {/*    </svg>*/}
-                                                        {/*</div>*/}
-                                                        <label htmlFor={`plan` + item.id} className="select-none" />
                                                     </div>
                                                 </div>
                                             </div>

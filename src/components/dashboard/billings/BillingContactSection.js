@@ -36,6 +36,7 @@ const BillingContactSection = () => {
                                 name="isSameSampleCollectionAddress"
                                 value={'false'}
                                 styles="w-full"
+                                checked
                             >
                                 <div className="w-3/4">
                                     <h1 className="text-[#344054] text-[14px] font-medium leading-6">
