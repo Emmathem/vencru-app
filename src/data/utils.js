@@ -74,7 +74,6 @@ export const planRecord = [
             { id: 3, avatar: Avatar4 },
             { id: 4, avatar: Avatar5 },
             { id: 5, avatar: Avatar4 },
-            { id: 6, avatar: Avatar4 },
         ],
     },
     {
