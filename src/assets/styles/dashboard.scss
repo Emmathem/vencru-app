@@ -25,7 +25,12 @@
   }
 }
 
+
 @media screen and (min-width: 1024px) {
+  .main-body {
+    margin-left: 280px;
+    transition: ease all 0.5s
+  }
   .sidebar {
     display: block;
     &__width {
