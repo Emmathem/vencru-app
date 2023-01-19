@@ -39,9 +39,9 @@ const BillingRecordSection = () => {
                     <span className="pl-2">Download all</span>
                 </div>
             </div>
-            <div className="my-6 mb-12 rounded-lg overflow-hidden">
+            <div className="my-6 mb-12 rounded-lg overflow-x-auto">
                 <div className="overflow-x-auto lg:overflow-x-hidden pb-16 md:w-full">
-                    <table className="w-full table-fixed overflow-x-auto bg-white shadow-md">
+                    <table className="w-full table-auto bg-white shadow-md">
                         <thead className="text-[#667085] border border-[#EAECF0] overflow-hidden font-normal text-[12px]">
                             <tr className="bg-[#F9FAFB]">
                                 <th className="py-3 px-3">
@@ -54,16 +54,24 @@ const BillingRecordSection = () => {
                                         />
                                     </div>
                                 </th>
-                                <th className="w-1/4 text-left">
+                                <th className="lg:w-auto w-64 text-left">
                                     <div className="flex items-center">
                                         <span className="pl-6">Invoice</span>
                                         <BsArrowDown />
                                     </div>
                                 </th>
-                                <th>Amount</th>
-                                <th>Date</th>
-                                <th>Status</th>
-                                <th>Users on Plan</th>
+                                <th>
+                                    <div className="lg:w-auto w-48">Amount</div>
+                                </th>
+                                <th>
+                                    <div className="lg:w-auto w-48">Date</div>
+                                </th>
+                                <th>
+                                    <div className="lg:w-auto w-48">Status</div>
+                                </th>
+                                <th>
+                                    <div className="lg:w-auto w-48">Users on Plan</div>
+                                </th>
                                 <th />
                             </tr>
                         </thead>
@@ -87,10 +95,12 @@ const BillingRecordSection = () => {
                                             </div>
                                         </td>
                                         <td>
-                                            <div className="text-[#101828] text-[14px] pl-6">{item.planName}</div>
+                                            <div className="lg:w-auto w-64 text-[#101828] text-[14px] pl-6">
+                                                {item.planName}
+                                            </div>
                                         </td>
                                         <td>
-                                            <div className="text-[#667085] text-center text-[14px]">
+                                            <div className="lg:w-auto w-48 text-[#667085] text-center text-[14px]">
                                                 USD {CurrencySign}
                                                 {formatAmount(item.amount)}
                                             </div>
@@ -99,7 +109,7 @@ const BillingRecordSection = () => {
                                             <div className="text-[#667085] text-[14px] text-center">{item.date}</div>
                                         </td>
                                         <td>
-                                            <div className="flex justify-center">
+                                            <div className="lg:w-auto w-48 flex justify-center">
                                                 <span className="flex items-center bg-[#ECFDF3] rounded-[16px] px-2 py-2 text-[#027A48] w-fit text-[12px]">
                                                     <FcCheckmark />
                                                     <span className="pl-2">{item.status}</span>
@@ -107,7 +117,7 @@ const BillingRecordSection = () => {
                                             </div>
                                         </td>
                                         <td>
-                                            <div className="flex items-center">
+                                            <div className="flex items-center lg:w-auto w-48 justify-center">
                                                 {item.users.length > 5 ? (
                                                     <>
                                                         {item.users.slice(0, 5).map((user, index) => (
@@ -133,7 +143,7 @@ const BillingRecordSection = () => {
                                             </div>
                                         </td>
                                         <td>
-                                            <div className="cursor-pointer flex justify-center">
+                                            <div className="cursor-pointer lg:w-auto w-64 pr-4 flex justify-center">
                                                 <img src={downloadIcon} alt="downloadIcon" />
                                             </div>
                                         </td>
