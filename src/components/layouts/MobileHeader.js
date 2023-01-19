@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ProductLogo from '../../assets/img/project_logo.png';
 import { Link } from 'react-router-dom';
 import { RiMenu2Fill } from 'react-icons/ri';
@@ -8,19 +8,19 @@ const MobileHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef(null);
 
-    useEffect(() => {
-        const dropEffectClick = (e) => {
-            if (menuRef.current !== null && !menuRef.current.contains(e.target)) {
-                setIsOpen(!isOpen);
-            }
-        };
-        if (isOpen) {
-            window.addEventListener('click', dropEffectClick);
-        }
-        return () => {
-            window.removeEventListener('click', dropEffectClick);
-        };
-    }, [isOpen]);
+    // useEffect(() => {
+    //     const dropEffectClick = (e) => {
+    //         if (menuRef.current !== null && !menuRef.current.contains(e.target)) {
+    //             setIsOpen(!isOpen);
+    //         }
+    //     };
+    //     if (isOpen) {
+    //         window.addEventListener('click', dropEffectClick);
+    //     }
+    //     return () => {
+    //         window.removeEventListener('click', dropEffectClick);
+    //     };
+    // }, [isOpen]);
 
     return (
         <>

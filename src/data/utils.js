@@ -38,3 +38,7 @@ export const settingMenu = [
     { id: 7, name: 'Integration', key: 'integration' },
     { id: 8, name: 'API', key: 'api' },
 ];
+
+export const planRecord = [
+    { id: 0, planName: 'Basic Plan – Dec 2022', amount: '10', date: 'Dec 1, 2022', status: 'Paid' },
+];

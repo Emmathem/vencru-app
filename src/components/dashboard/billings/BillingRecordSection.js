@@ -1,7 +1,29 @@
 import React from 'react';
 import { BsCloudDownload } from 'react-icons/bs';
+import { Table } from 'antd';
+import { planRecord } from '../../../data/utils';
 
 const BillingRecordSection = () => {
+    const columns = [
+        {
+            title: 'Invoice',
+            dataIndex: 'planName',
+        },
+        {
+            title: 'Amount',
+        },
+        {
+            title: 'Date',
+        },
+        {
+            title: 'Status',
+        },
+        {
+            title: 'Users on Plan',
+        },
+    ];
+
+    const rowSelection = () => {};
     return (
         <div className="mt-8">
             <div className="flex items-center justify-between">
@@ -10,6 +32,9 @@ const BillingRecordSection = () => {
                     <BsCloudDownload />
                     <span className="pl-1">Download all</span>
                 </div>
+            </div>
+            <div className="my-6 mb-12 rounded-lg overflow-hidden shadow-md">
+                <Table columns={columns} rowSelection={rowSelection} data={planRecord} />
             </div>
         </div>
     );
