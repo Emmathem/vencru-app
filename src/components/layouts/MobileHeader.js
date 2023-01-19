@@ -42,7 +42,7 @@ const MobileHeader = () => {
                     {navMenu.main?.map((res, index) => (
                         <React.Fragment key={index}>
                             <Link href={res.route} className={menuItemsStyle.menuItem}>
-                                <div className="flex items-center">
+                                <div className="flex items-center" onClick={() => setIsOpen(false)}>
                                     <img src={res.icon} alt="icon" className="mr-3 w-[25px]" />
                                     <span>{res.name}</span>
                                 </div>
@@ -54,7 +54,7 @@ const MobileHeader = () => {
                         {navMenu.others?.map((res, index) => (
                             <React.Fragment key={index}>
                                 <Link href={res.route} className={menuItemsStyle.menuItem}>
-                                    <div className="flex items-center">
+                                    <div className="flex items-center" onClick={() => setIsOpen(false)}>
                                         <img src={res.icon} alt="icon" className="mr-3 w-[25px]" />
                                         <span>{res.name}</span>
                                     </div>

@@ -14,16 +14,16 @@ import Avatar5 from '../assets/img/icons/Avatar5.png';
 
 export const navMenu = {
     main: [
-        { id: 1, name: 'Home', route: '/dashboard/', icon: HomeIcon, hasCount: false },
-        { id: 2, name: 'Dashboard', route: '/dashboard/', icon: DashIcon, hasCount: true },
-        { id: 3, name: 'Projects', route: '/dashboard/order', icon: ProjectIcon, hasCount: false },
-        { id: 4, name: 'Tasks ', route: '/dashboard/result-inbox', icon: TaskIcon, hasCount: false },
-        { id: 5, name: 'Reporting', route: '/dashboard/my-patients', icon: ReportIcon, hasCount: false },
-        { id: 6, name: 'Users', route: '/dashboard/users', icon: UserIcon },
+        { id: 1, name: 'Home', route: '/', icon: HomeIcon, hasCount: false },
+        { id: 2, name: 'Dashboard', route: '/', icon: DashIcon, hasCount: true },
+        { id: 3, name: 'Projects', route: '/', icon: ProjectIcon, hasCount: false },
+        { id: 4, name: 'Tasks ', route: '/', icon: TaskIcon, hasCount: false },
+        { id: 5, name: 'Reporting', route: '/', icon: ReportIcon, hasCount: false },
+        { id: 6, name: 'Users', route: '/', icon: UserIcon },
     ],
     others: [
-        { id: 1, name: 'Support', route: '/dashboard/', icon: SupportIcon, hasCount: false },
-        { id: 2, name: 'Settings', route: '/dashboard/', icon: SettingIcon, hasCount: false },
+        { id: 1, name: 'Support', route: '/', icon: SupportIcon, hasCount: false },
+        { id: 2, name: 'Settings', route: '/', icon: SettingIcon, hasCount: false },
     ],
 };
 
