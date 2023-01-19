@@ -3,6 +3,7 @@ import { settingMenu } from '../../../data/utils';
 import { Divider } from 'antd';
 import BillingContactSection from './BillingContactSection';
 import BillingCardSection from './BillingCardSection';
+import BillingRecordSection from './BillingRecordSection';
 
 const TabMenu = ({ isActive, setActiveTab }) => {
     return (
@@ -30,6 +31,7 @@ const TabMenu = ({ isActive, setActiveTab }) => {
                 <BillingContactSection />
                 <Divider />
                 <BillingCardSection />
+                <BillingRecordSection />
             </div>
         </>
     );
