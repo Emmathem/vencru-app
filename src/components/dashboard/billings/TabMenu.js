@@ -1,6 +1,8 @@
 import React from 'react';
-import { settingMenu } from '../../data/utils';
+import { settingMenu } from '../../../data/utils';
 import { Divider } from 'antd';
+import BillingContactSection from './BillingContactSection';
+import BillingCardSection from './BillingCardSection';
 
 const TabMenu = ({ isActive, setActiveTab }) => {
     return (
@@ -25,6 +27,9 @@ const TabMenu = ({ isActive, setActiveTab }) => {
                     <h3 className="text-[#667085] text-[14px]">Update your billing details and address.</h3>
                 </div>
                 <Divider />
+                <BillingContactSection />
+                <Divider />
+                <BillingCardSection />
             </div>
         </>
     );

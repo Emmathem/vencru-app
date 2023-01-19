@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MainLayout from '../layouts/MainLayout';
-import TabMenu from './TabMenu';
+import TabMenu from './billings/TabMenu';
 
 const DashboardIndex = () => {
     const [isActive, setIsActive] = useState(5);
