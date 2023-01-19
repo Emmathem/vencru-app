@@ -33,7 +33,7 @@ export const menuItemsStyle = {
 };
 
 export const settingMenu = [
-    { id: 0, name: 'My details', key: 'my-details' },
+    { id: 0, name: 'My Details', key: 'my-details' },
     { id: 1, name: 'Profile', key: 'profile' },
     { id: 2, name: 'Password', key: 'password' },
     { id: 3, name: 'Team', key: 'team' },
