@@ -45,7 +45,7 @@ const Sidebar = (props) => {
                                 >
                                     <div className="flex items-center">
                                         <img src={nav.icon} alt="icon" className="mr-3 w-[25px]" />
-                                        <span>{nav.name}</span>
+                                        <span className="text-[#344054]">{nav.name}</span>
                                     </div>
                                     {nav.hasCount && (
                                         <span className="rounded-[16px] w-[36px] flex justify-center items-center bg-[#F2F4F7]">
@@ -74,7 +74,7 @@ const Sidebar = (props) => {
                                 >
                                     <div className="flex items-center">
                                         <img src={nav.icon} alt="icon" className="mr-3 w-[25px]" />
-                                        <span>{nav.name}</span>
+                                        <span className="text-[#344054]">{nav.name}</span>
                                     </div>
                                 </div>
                             );
