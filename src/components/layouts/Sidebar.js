@@ -48,7 +48,7 @@ const Sidebar = (props) => {
                                         <span className="text-[#344054]">{nav.name}</span>
                                     </div>
                                     {nav.hasCount && (
-                                        <span className="rounded-[16px] w-[36px] flex justify-center items-center bg-[#F2F4F7]">
+                                        <span className="rounded-[16px] w-[36px] text-[#344054] flex justify-center items-center bg-[#F2F4F7]">
                                             10
                                         </span>
                                     )}
